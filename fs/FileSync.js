@@ -49,6 +49,7 @@ function readDirContentsSync(dir) {
     try {
         const files = fs.readdirSync(dir);
         console.log('Directory contents:', files);
+        return files;
     } catch (err) {
         console.log('Error reading directory files: ' + err);
     }
@@ -65,15 +66,6 @@ function readFileSync(path) {
     }
 }
 
-function deleteFileSync(path) {
-    try {
-        fs.unlinkSync(path);
-        console.log('File delete successful!');
-    } catch (err) {
-        console.log('Unable to delete the file: ' + err);
-    }
-}
-
 function renameFileSync(oldPath, newPath) {
     try {
         fs.renameSync(oldPath, newPath);
@@ -83,7 +75,28 @@ function renameFileSync(oldPath, newPath) {
     }
 }
 
-// Sample usage
+function deleteFileInDirSync(dir) {
+    try {
+        setTimeout(() => { 
+            let files = readDirContentsSync(dir);
+            for(let file of files) {
+                path = dir + file;
+                console.log(path);
+                fs.unlink(path, (err) => {
+                    if(err) {
+                        console.log('Error in unlink the file: ' + file + ' error: ' + err);
+                    } else {
+                        console.log('File Delete Successful: ' + file);
+                    }
+                })
+            }
+        }, 2000);
+        
+    } catch (err) {
+        console.log('Unable to delete the file: ' + err);
+    }
+}
+
 createDirSync('dir-name');
 writeFileSync('./dir-name/output.txt', 'Sample data to write to the file using fs module in Node.js.\n');
 appendFileSync('./dir-name/output.txt', 'This content will be appended to the existing contents.');
@@ -92,4 +105,4 @@ copyFileSync('./dir-name/output.txt', './dir-name/copy-output.txt');
 readDirContentsSync('./dir-name');
 readFileSync('./dir-name/output.txt');
 renameFileSync('./dir-name/output.txt', './dir-name/renamed-output.txt');
-// deleteFileSync('./dir-name/output.txt'); // Uncomment to test file deletion
+deleteFileInDirSync('./dir-name/'); 

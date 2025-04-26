@@ -56,7 +56,10 @@ function readDirContents(dir) {
             console.log('Error reading directory files: ' + err);
             return;
         }
-        console.log('Directory contents:', files);
+        else {
+            console.log('Directory contents:', files);
+            return files;
+        }
     });
 }
 
@@ -72,16 +75,6 @@ function readFileAsync(path) {
     });
 }
 
-function deleteFileAsync(path) {
-    fs.unlink(path, (err) => {
-        if (err) {
-            console.log('Unable to delete the file: ' + err);
-            return;
-        }
-        console.log('File delete successful!');
-    });
-}
-
 function renameFileAsync(oldPath, newPath) {
     fs.rename(oldPath, newPath, (err) => {
         if (err) {
@@ -92,7 +85,25 @@ function renameFileAsync(oldPath, newPath) {
     });
 }
 
-// Sample usage
+
+function deleteFileAsync(dir) {
+
+    setTimeout(() => {
+        let files = readDirContents(dir);
+        console.log(files);
+        for(let file of files) {
+            let path = dir + file;
+            fs.unlink(path, (err) => {
+                if (err) {
+                    console.log('Error in unlinking the path: ' + path + ' Error: ' + err);
+                } else  {
+                    console.log('Unlinking is successful: ' + file);
+                }
+            });
+        }
+    }, 2000);
+}
+
 createDirAsync('dir-name');
 writeFileAsync('./dir-name/output.txt', 'Sample data to write to the file using fs module in Node.js.\n');
 appendFileAsync('./dir-name/output.txt', 'This content will be appended to the existing contents.');
@@ -101,4 +112,4 @@ copyFile('./dir-name/output.txt', './dir-name/copy-output.txt');
 readDirContents('./dir-name');
 readFileAsync('./dir-name/output.txt');
 renameFileAsync('./dir-name/output.txt', './dir-name/renamed-output.txt');
-// deleteFileAsync('./dir-name/output.txt'); // Uncomment to test file deletion
+//deleteFileAsync('./dir-name'); // Uncomment to test file deletion
