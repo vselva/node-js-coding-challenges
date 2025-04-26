@@ -6,7 +6,6 @@ clonedArr.push(4);
 console.log(`array: ${arr}`);
 console.log(`Cloned array: ${clonedArr}`);
 
-
 console.log('----- merge array -----');
 let arr1 = [1, 2, 3];
 let arr2 = [4, 5, 6];
