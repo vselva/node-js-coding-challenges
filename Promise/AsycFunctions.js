@@ -7,13 +7,14 @@
 
 // Automatically wrapped in Promise.resolve()
 // Example using 'async' (returns a Promise automatically)
+
 async function fetchData1() {
     return { data: 'sample2' }; 
 }
 
 // Same behavior without 'async' (manual Promise)
 function fetchData2() {
-    return new Promise((resolve, reject) => resolve({ data: 'sample2' }));
+    return new Promise((resolve) => resolve({ data: 'sample2' }));
 }
 
 // Calling both functions and handling their results

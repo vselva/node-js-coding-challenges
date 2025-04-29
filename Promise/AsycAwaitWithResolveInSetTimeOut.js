@@ -1,7 +1,7 @@
 // Function that returns a Promise, which resolves after a specified time delay (ms)
 function delay(ms) {
     // Returning a new Promise that resolves after the setTimeout delay
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         setTimeout(() => {
             resolve(`Resolved after ${ms} milliseconds`); // Resolving the promise with a message
         }, ms);
@@ -26,3 +26,4 @@ testAsyncAwait()
     .finally(() => {
         console.log('Finally block executed'); // Logs after the promise has settled (either resolved or rejected)
     });
+

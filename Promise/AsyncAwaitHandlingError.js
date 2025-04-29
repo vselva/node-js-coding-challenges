@@ -48,7 +48,6 @@ async function asyncAwaitRejectWithReturn() {
 asyncAwaitRejectWithReturn()
     .then(data => {
         console.log('Data: ' + data);
-    })
-    .catch(err => {
+    }).catch(err => {
         console.log('Error: ' + err);
     });
