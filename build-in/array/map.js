@@ -1,0 +1,6 @@
+const square = (arr) => {
+    console.log( arr.map((item) => item * item));
+}
+
+const array = [1, 2, 3, 4, 5];
+square(array);
