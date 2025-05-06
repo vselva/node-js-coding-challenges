@@ -37,8 +37,7 @@ const nested = [1, [2, 3], [4, 5]];
 const flatten = [nested[0], ...nested[1], ...nested[2]];
 console.log('Flatten an array with spread operator:', flatten); // [1, 2, 3, 4, 5]
 
-// 7. Write a function that merges two objects, giving precedence to the second
-
+// Write a function that merges two objects, giving precedence to the second
 function merge(obj1, obj2) {
     return {...obj1, ...obj2}
 }
