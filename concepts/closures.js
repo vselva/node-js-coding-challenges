@@ -4,10 +4,11 @@
 
 // A closure "remembers" variables from its outer scope.
 function greet(name) {
+    const respectfulName = 'Mr. ' + name;
     // Outer function takes `name` and returns a new function
     return function(message) {
         // Inner function uses `name` even though it's not its own variable `message`
-        console.log('Hi ' + name + ', ' + message);
+        console.log('Hi ' + respectfulName + ', ' + message);
     }
 }
 
@@ -15,10 +16,10 @@ function greet(name) {
 const greetSelva = greet('Selva');
 
 // You can reuse greetSelva with different messages, 
-// while name is stored already only message can be changed 
+// while respectfulName is stored already only message can be changed 
 
 greetSelva('Good Morning!'); 
-// => Hi Selva, Good Morning!
+// => Hi Mr. Selva, Good Morning!
 
 greetSelva('Good Evening!'); 
-// => Hi Selva, Good Evening!
+// => Hi Mr. Selva, Good Evening!
