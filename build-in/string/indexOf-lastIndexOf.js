@@ -1,7 +1,7 @@
-const string = 'This is a JavaScript Programming';
-console.log(string.indexOf('T')); // 0
-console.log(string.indexOf('is')); // 5
-console.log(string.indexOf('JavaScript'));// 10
+const string1 = 'This is a JavaScript Programming';
+console.log(string1.indexOf('T')); // 0
+console.log(string1.indexOf('is')); // 5
+console.log(string1.indexOf('JavaScript'));// 10
 
 console.log('');
 const string2 = 'This man is a great man';
