@@ -19,7 +19,7 @@ console.log('sum:', sum(...nums)); // 6
 
 // Remove a property from an object using destructuring and spread
 const person = { name: 'Selva', age: 24, location: 'Chennai' };
-const{age, ...newObj}  = person;
+const{age, ...newObj}  = person; // rest of the items other than age gods to newObj
 console.log('Removed a property from object with spread and destructuring', newObj); // { name: 'Selva', location: 'Chennai' }
 
 // Write a function that accepts a variable number of arguments and returns a new array with all values doubled
