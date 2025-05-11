@@ -14,7 +14,7 @@ function Person (name) {
     Person.prototype.age = 10; 
 
 const person1 = new Person('Selva');
-console.log(person1.greetUser());   // selva doesn't have a greet() method, 
+console.log(person1.greetUser());   // person1 doesn't have a greet() method, 
                                     // inherits it from Person.prototype.greetUser
-console.log(person1.age); // selva doesn't have a age property, 
+console.log(person1.age); // person1 doesn't have a age property, 
                           // inherits it from Person.prototype.age
