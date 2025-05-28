@@ -1,12 +1,17 @@
-// Merge two arrays using spread
+// String to Array with Rest Operator
+const string = "Selvakumar";
+const array = [...string];
+console.log('String to Array:', array);
+ 
+// // Merge two arrays using spread
 const arr1 = [1, 2];
 const arr2 = [3, 4];
 let mergedArray = [...arr1, ...arr2];
 console.log('Merged arrays:', mergedArray); // [1, 2, 3, 4]
 
-// Clone an object using spread and modify a property
+// Clone an object using spread and add/modify a property
 const user = { name: 'Alice', age: 25 };
-let clonedUser = {...user};
+let clonedUser = {...user, sex: 'Male'};
 clonedUser.age = 30;
 console.log('cloned user:', clonedUser); // { name: 'Alice', age: 30 }
 
@@ -22,7 +27,8 @@ const person = { name: 'Selva', age: 24, location: 'Chennai' };
 const{age, ...newObj}  = person; // rest of the items other than age gods to newObj
 console.log('Removed a property from object with spread and destructuring', newObj); // { name: 'Selva', location: 'Chennai' }
 
-// Write a function that accepts a variable number of arguments and returns a new array with all values doubled
+// Write a function that accepts a variable number of arguments and 
+// returns a new array with all values doubled
 function doubleAll(...args) {
     let double = [];
     for(let i = 0; i < args.length; i++) {
