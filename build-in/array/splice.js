@@ -1,4 +1,5 @@
 // splice(start, count)
+// This is a Remover type code
 // removes characters of count 'count' from the location 'start'
 // returns removed chars 
 // while the actual string modified to keep the remaining 
@@ -19,6 +20,7 @@ console.log("-".repeat(40));
 // 3. Join the remaining array elements back into a string using .join('')
 const spliceString = (inStr, start, count) => {
     const array = inStr.split('');
+    // const array = [ ...inStr ]; // alternate method to convert string to array of characters
     const removedArr = array.splice(start, count);
     return {
         removed: removedArr.join(''),

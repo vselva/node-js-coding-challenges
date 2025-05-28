@@ -1,5 +1,6 @@
 
-// slice, take portion of the string or array based on start and end
+// slice = This is GETTER function
+// take portion of the string or array based on start and end
 // start and end are zero-based indecies 
 // while start is included and end is excluded
 // orginal array will not updated
@@ -15,6 +16,6 @@ console.log('');
 const inArr = [1, 2, 3, 4, 5];
 console.log('inArr:', inArr)
 
-removedItem = inArr.slice(1, 3);
+sliced = inArr.slice(1, 3);
 console.log('After slice, inArr (unchanged):', inArr);
-console.log('sliced Item:', removedItem);
+console.log('sliced Item:', sliced);
