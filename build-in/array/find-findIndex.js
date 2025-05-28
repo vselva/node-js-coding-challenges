@@ -1,16 +1,19 @@
 const inArr = [1, 2, 3, 4, 5,6, 7, 8, 9, 10];
 
-// find First Even Number
+console.log('');
+console.log('find First Even Number');
 const firstEvenNum = inArr.find(el => el % 2 === 0 );
 const firstEvenNumIndex = inArr.findIndex((el => el % 2 === 0));
 console.log('First Even Number in Array:', firstEvenNum, 'Index:', firstEvenNumIndex);
 
-// First number greater than 5
+console.log('');
+console.log('First number greater than 5');
 const firstNumberGreaterThan5 = inArr.find(el => el > 5);
 const firstNumberGreaterThan5Index = inArr.findIndex(el => el > 5);
 console.log('First Number greater than 5', firstNumberGreaterThan5, 'Index: ', firstNumberGreaterThan5Index);
 
-// find the product whose id is 102
+console.log('');
+console.log('find the product whose id is 102');
 const products = [
     { id: 101, name: 'Pen' },
     { id: 102, name: 'Pencil' },
@@ -20,42 +23,45 @@ const findId102 = products.find(el => el.id === 102);
 const findId102Index = products.find(el => el.id === 102);
 console.log('Find 102 Product:', findId102, 'Index:', findId102Index);
 
-// Remove first negative number 
+console.log('');
+console.log('Remove first negative number');
 let numbers = [2, -3, 4, -1, 5];
+console.log('original array - numbers:', numbers);
 const firstNegativeNumIndex = numbers.findIndex(el => el < 0);
 const removed = numbers.splice(firstNegativeNumIndex, 1);
 console.log('Removed first negative number:', numbers);
+console.log('Removed negative number - the return value value (removed):', removed);
 
-// Replace withe postive numher
+console.log('');
+console.log('Replace with postive numher');
 numbers = [2, -3, 4, -1, 5];
+console.log('original array - numbers:', numbers);
 const replaced = numbers.splice(firstNegativeNumIndex, 1, -numbers[firstNegativeNumIndex]);
 console.log('Replaced first negative number with its positive number:', numbers);
 
-// Find first duplicate number 
-console.log('-----');
+console.log('');
+console.log('Find first duplicate number');
 numbers = [1, 2, 2, 3, 4];
 let duplicateNum = null;
 while(numbers.length > 1) {
-    let item = numbers[0];
-    numbers.splice(0, 1);
-    duplicateNum = numbers.find(el => el === item);
-    if(duplicateNum !== undefined) break;
+    // let item = numbers[0];
+    let [ item ] = numbers.splice(0, 1);
+    console.log('item:', item, 'numbers:', numbers);
+    duplicateNum = numbers.find(n => n === item);
+    if(duplicateNum) break;
 }
-if (duplicateNum)
-    console.log('Duplicate Number in the array:', duplicateNum);
-else 
-    console.log('No duplicate number');
+console.log(duplicateNum ? `Duplicate Number in the array is ${duplicateNum}` : 'No duplicate number');
 
-// Find the first string that starts with a *:
-console.log('-----');
-const names = ['John', 'Eve', '*Oliver', 'Chris'];
-const firstStarStr = names.find((el) => {
-    return el[0] === '*';
+console.log('');
+console.log('Find the first string that starts with a "Mr.":');
+const names = ['John', 'Eve', 'Mr.Oliver', 'Mr.Chris'];
+const firstStarStr = names.find((name) => {
+    return name.startsWith('Mr.');
 });
-console.log('first string that starts with a *:', firstStarStr);
+console.log('first string that starts with "Mr." is', firstStarStr);
 
-// custom implementation of find
-console.log('-----');
+console.log('');
+console.log('custom implementation of find');
 Array.prototype.myFind = function(cb) {
     for (let i = 0; i < this.length; i++) {
         if (cb(this[i], i, this)) {
