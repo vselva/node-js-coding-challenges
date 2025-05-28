@@ -1,9 +1,10 @@
-// String to Array with Rest Operator
+console.log('=============== SPREAD ==============');
+// String to Array with Spread Operator
 const string = "Selvakumar";
 const array = [...string];
 console.log('String to Array:', array);
  
-// // Merge two arrays using spread
+// Merge two arrays using spread
 const arr1 = [1, 2];
 const arr2 = [3, 4];
 let mergedArray = [...arr1, ...arr2];
@@ -15,14 +16,34 @@ let clonedUser = {...user, sex: 'Male'};
 clonedUser.age = 30;
 console.log('cloned user:', clonedUser); // { name: 'Alice', age: 30 }
 
-// Function argument expansion
+// Function argument expansion using spread
 function sum(a, b, c) {
   return a + b + c;
 }
 const nums = [1, 2, 3];
 console.log('sum:', sum(...nums)); // 6
 
-// Remove a property from an object using destructuring and spread
+// Flatten nested arrays using spread (only one level deep)
+const nested = [1, [2, 3], [4, 5]];
+const flatten = [nested[0], ...nested[1], ...nested[2]];
+console.log('Flatten an array with spread operator:', flatten); // [1, 2, 3, 4, 5]
+
+// Write a function that merges two objects, giving precedence to the second
+function merge(obj1, obj2) {
+    return {...obj1, ...obj2}
+}
+const mergedObj = merge({ a: 1, b: 2 }, { b: 3, c: 4 }); // { a: 1, b: 3, c: 4 }
+console.log('Merged objects with spread:', mergedObj);
+
+console.log('');
+console.log('=============== REST ==============');
+
+// destructuring array with rest operator
+const arr3 = [1, 2, 3, 4, 5];
+const [ first, second, ...restOfArray ] = arr3;
+console.log('first:', first, 'second:', second, 'restOfArray:', restOfArray);
+
+// Remove a property from an object using destructuring and rest
 const person = { name: 'Selva', age: 24, location: 'Chennai' };
 const{age, ...newObj}  = person; // rest of the items other than age gods to newObj
 console.log('Removed a property from object with spread and destructuring', newObj); // { name: 'Selva', location: 'Chennai' }
@@ -37,15 +58,3 @@ function doubleAll(...args) {
     return double;
 }
 console.log('doubleAll:', doubleAll(1, 2, 3)); // [2, 4, 6]
-
-// Flatten nested arrays using spread (only one level deep)
-const nested = [1, [2, 3], [4, 5]];
-const flatten = [nested[0], ...nested[1], ...nested[2]];
-console.log('Flatten an array with spread operator:', flatten); // [1, 2, 3, 4, 5]
-
-// Write a function that merges two objects, giving precedence to the second
-function merge(obj1, obj2) {
-    return {...obj1, ...obj2}
-}
-const mergedObj = merge({ a: 1, b: 2 }, { b: 3, c: 4 }); // { a: 1, b: 3, c: 4 }
-console.log('Merged objects with spread:', mergedObj);
