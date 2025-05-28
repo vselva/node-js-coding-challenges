@@ -9,24 +9,4 @@ const removeLastChar = (inArr) => {
 }
 console.log('removeLastChar:', removeLastChar([0, 1, 2, 3]));
 
-// const removeFirstChar = (inArr) => {
-//     return inArr.slice(1); // slice(start)
-//     //return inArr.slice(1, inArr.length); // slice(start, end)
-// }
-// console.log('removeFistChar:', removeFirstChar('Tajmahal'));
-
-// const lastNCharOfString = (inArr, n) => {
-//     return inArr.slice(-n);
-// }
-// console.log('lastNCharOfString:', lastNCharOfString('selvakumar', 5));
-
-// const firstNCharOfString = (inArr, n) => {
-//     return inArr.slice(0, n);
-// }
-// console.log('firstNCharOfString:', firstNCharOfString('selvakumar', 5));
-
-// const copyString = (inArr) => {
-//     return inArr.slice();
-// }
-// const inArr = 'Selvakumar';
-// console.log('copyStringWithSlice:', copyString(inArr));
+// slice can work with strings also, please check build-in/string/slice.js
