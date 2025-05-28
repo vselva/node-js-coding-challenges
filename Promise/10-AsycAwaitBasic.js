@@ -1,3 +1,4 @@
+// async function always returns promises only
 async function basicAsycAwait() {
     let data = await Promise.resolve('Promise Resolved.');
     console.log(data);
@@ -19,4 +20,4 @@ async function parent() {
         console.log('Error in basicAsyncAwait function. Error: ' + err);
     } 
 }
-parent().finally(console.log('Finished!!'));
+parent().finally(console.log('Finished!!')); // Finally is not possible in the async function like try/catch
