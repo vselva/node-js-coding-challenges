@@ -34,8 +34,7 @@ function reDeclare() {
         let l1 = 10;
         let l1 = 20; // not accepted
     } catch (err) {
-        console.log('Error in re declaring let variable. Error: ' + err);
+        console.log('Error in re declaring let variable. Error: ' + err.message);
     }
 }
 reDeclare();
-
