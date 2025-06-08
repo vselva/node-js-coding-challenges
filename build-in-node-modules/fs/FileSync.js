@@ -98,11 +98,19 @@ function deleteFileInDirSync(dir) {
 }
 
 createDirSync('dir-name');
+console.log('');
 writeFileSync('./dir-name/output.txt', 'Sample data to write to the file using fs module in Node.js.\n');
+console.log('');
 appendFileSync('./dir-name/output.txt', 'This content will be appended to the existing contents.');
+console.log('');
 fileExists('./dir-name/output.txt');
+console.log('');
 copyFileSync('./dir-name/output.txt', './dir-name/copy-output.txt');
+console.log('');
 readDirContentsSync('./dir-name');
+console.log('');
 readFileSync('./dir-name/output.txt');
+console.log('');
 renameFileSync('./dir-name/output.txt', './dir-name/renamed-output.txt');
+console.log('');
 deleteFileInDirSync('./dir-name/'); 
