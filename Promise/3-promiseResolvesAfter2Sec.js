@@ -11,6 +11,3 @@ timeout
     .finally(() => {
         console.log("Finally done!");
     });
-
-// .then(console.log) automatically passes the resolved value to console.log(data).
-// Same as writing: .then((data) => { console.log(data); })
