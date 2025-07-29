@@ -8,13 +8,13 @@ promise2 = new Promise((resolve) => {
 
 promise3 = Promise.resolve(3); // with Promise static method
 
-Promise.all([ promise1, promise2, promise3])
+Promise.all([promise1, promise2, promise3])
     .then((data) => {
-        console.log('All Promises resoves successfully! Data: ', data);
+        console.log("All Promises resoves successfully! Data: ", data);
     })
     .catch((error) => {
-        console.log('Not all promises resolved! Error: ', error);
+        console.log("Not all promises resolved! Error: ", error);
     })
     .finally(() => {
-        console.log('Finally done!');
-    })
+        console.log("Finally done!");
+    });

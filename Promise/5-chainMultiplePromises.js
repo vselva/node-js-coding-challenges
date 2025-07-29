@@ -1,5 +1,5 @@
 promise = new Promise((resolve, reject) => {
-    resolve(2)
+    resolve(2);
 });
 
 promise
@@ -15,5 +15,5 @@ promise
         console.log(err);
     })
     .finally(() => {
-        console.log('Finally done!')
+        console.log("Finally done!");
     });
