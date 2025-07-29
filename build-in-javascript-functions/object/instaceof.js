@@ -1,5 +1,17 @@
 var checkIfInstanceOf = function (obj, classFunction) {
-    return obj instanceof classFunction;
+    if (obj == null || typeof classFunction !== "function") {
+        return false;
+    }
+
+    let proto = Object.getPrototypeOf(obj);
+
+    while (proto !== null) {
+        if (proto === classFunction.prototype) {
+            return true;
+        }
+        proto = Object.getPrototypeOf(proto);
+    }
+    return false;
 };
 
 class Animal {
@@ -14,5 +26,15 @@ class Dog extends Animal {
 }
 const dog = new Dog();
 console.log(checkIfInstanceOf(dog, Dog));
+
+console.log("");
 console.log(checkIfInstanceOf(dog, Animal));
+
+console.log("");
 console.log(checkIfInstanceOf(dog, Object));
+
+console.log("");
+console.log(checkIfInstanceOf(new Date(), Date));
+
+console.log("");
+console.log(checkIfInstanceOf(undefined, Array));

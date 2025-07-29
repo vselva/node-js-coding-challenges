@@ -1,14 +1,16 @@
+//direct promise
+promise1 = new Promise((res, rej) => rej("Failure!"));
+promise1
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
+    .finally(() => console.log("Done!"));
 
-promise = new Promise((res, rej) => {
-    //res('Success!'); // => then method will get executed of this promise object
-    rej('Failure!'); // => catch method will get executed of this promise object
-});
+//function that returns promise
+promise2 = function () {
+    return new Promise((res, rej) => res("Success"));
+};
 
-// consuming the promise
-promise.then((res) => {
-    console.log(res);
-}).catch((err) => {
-    console.log(err);
-}).finally(() => {
-    console.log('Done!');
-});
+promise2()
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
+    .finally(() => console.log("Done!"));
