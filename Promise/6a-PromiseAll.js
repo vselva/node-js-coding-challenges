@@ -3,7 +3,7 @@ promise1 = new Promise((resolve) => {
 });
 
 promise2 = new Promise((resolve) => {
-    resolve(2);
+    setTimeout(() => resolve(2), 2000);
 });
 
 promise3 = Promise.resolve(3); // with Promise static method

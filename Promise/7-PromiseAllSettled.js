@@ -1,4 +1,4 @@
-const promise1 = Promise.resolve("resolved immediately!");
+const promise1 = Promise.resolve("resolved immediately!"); // static resolve method of Promise Class
 
 const promise2 = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -6,7 +6,7 @@ const promise2 = new Promise((resolve, reject) => {
     }, 2000);
 });
 
-Promise.allSettled([promise1, promise2]).then((results) => {
-    console.log(results);
-});
+Promise.allSettled([promise1, promise2]).then((results) =>
+    console.log(results)
+);
 // .catch(console.log);  // Not required for allSettled
